@@ -52,8 +52,16 @@
         $f->inicializar($_REQUEST['fechaNacimiento'],$_REQUEST['fechActual']);
         $f->conectarBD();
         $f->insertar();
-         
     ?>
+    <?php echo "Llevas de vida:   ";
+        echo $vida;
+    ?>%
+    <?php 
+        echo "<br>";
+        echo "Te falta para morir:  ";
+        echo $muerte;
+    ?>%
+    
 
 	<script type="text/javascript">
 Highcharts.chart('container', {
@@ -61,7 +69,7 @@ Highcharts.chart('container', {
         type: 'bar'
     },
     title: {
-        text: 'Stacked bar chart'
+        text: 'Vida'
     },
     xAxis: {
         categories: ['Vida']
