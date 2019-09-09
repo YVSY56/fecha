@@ -1,5 +1,5 @@
 <?php
-    include"Fecha.php";
+    include "Fecha.php";
         $con = mysqli_connect("localhost","root","","fecha");
         $sul= mysqli_query($con,"SELECT * from Fecha where id= 1");
         $resul= mysqli_fetch_array($sul);
@@ -47,6 +47,14 @@
 <script src="code/modules/export-data.js"></script>
 	<h2>Porcentajes</h2><br><br>
     <div id="container" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
+    <?php
+        $f=new Fecha();
+        $f->inicializar($_REQUEST['fechaNacimiento'],$_REQUEST['fechActual']);
+        $f->conectarBD();
+        $f->insertar();
+         
+    ?>
+
 	<script type="text/javascript">
 Highcharts.chart('container', {
     chart: {
@@ -74,10 +82,10 @@ Highcharts.chart('container', {
     },
     series: [{
         name: 'restantes',
-        data: [<?php $muerte ?>]
+        data: [<?php echo $muerte ?>]
     }, {
         name: 'Vividos',
-        data: [<?php $vida ?>]
+        data: [<?php echo $vida ?>]
     }]
 });
 		</script>

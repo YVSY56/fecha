@@ -1,12 +1,13 @@
 <?php
 class Fecha{
+
 	private $fechaNacimiento;
 	private $fechActual;
 	private $fechaFin;
-	    public function inicializar($fechaNacimiento,$fechActual,$fechaFin){
+	    public function inicializar($fechaNacimiento,$fechActual){
 			$this->fechaNacimiento = $fechaNacimiento;
 			$this->fechActual = $fechActual;
-			$this->fechaFin= $fechaFin;
+	
 		}
 
 		public function conectarBD(){
